@@ -3,6 +3,9 @@
 ## Install project
 
     npm i
+## Build project
+
+    ng build
 
 ## Usage
 
