@@ -1,0 +1,14 @@
+.texts-container{
+    position: relative;
+    display: inline-flex;
+    padding: 1em 0.6em;
+    height: 7em;
+}
+.source-container{
+    font-size: 10px;
+    text-align: right;
+    span{
+        font-family: sans-serif;
+        font-weight: bolder;
+    }
+}

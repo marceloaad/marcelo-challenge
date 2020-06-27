@@ -1,0 +1,6 @@
+<mat-button-toggle-group name="entitiesGroup" aria-label="Entities Group" value="PERSON" class="entities-group">
+    <mat-button-toggle *ngFor="let entity of entities; index as i" (click) = "sendEntity(entity)" [value]="entity">
+        {{entity}}
+        <span>{{i + 1}}</span>
+    </mat-button-toggle>
+</mat-button-toggle-group>

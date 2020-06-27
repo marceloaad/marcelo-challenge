@@ -1,0 +1,32 @@
+::ng-deep.mat-button-toggle-group{
+    background-color: #4f23b6;
+    border-radius: 0!important;
+    padding: 1em;
+    flex-wrap: wrap;
+    .mat-button-toggle {
+        background-color: #4f23b6;
+        margin: 0.4em;
+        border: 2px solid #ffffff!important;
+        border-radius: 2px;
+        .mat-button-toggle-button {
+            .mat-button-toggle-label-content {
+                color: #ffffff;
+                line-height: 1.5;
+                padding: 0.2em 0.4em;
+                span {
+                    font-size: 10px;
+                    vertical-align: inherit;
+                }
+            }
+        }
+    }
+    .mat-button-toggle-checked {
+        background-color: #ffffff;
+        .mat-button-toggle-button {
+            .mat-button-toggle-label-content {
+                color: #4f23b6;
+                font-weight: bold;
+            }
+        }
+    }
+}

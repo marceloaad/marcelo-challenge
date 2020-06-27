@@ -1,0 +1,15 @@
+<section class="main-container" [class.active]="postingAnnotation">
+  <app-entities-container></app-entities-container>
+  <app-texts-container (sendSelectedText)="textSelection=$event" [textIndex]="currentTextIndex"></app-texts-container>
+</section>
+<footer>
+  <button mat-raised-button color="success" (click) = "postAnnotation()" (mouseup)="nextTextIndex()" [disabled]="textSelection === null">
+      <mat-icon>done</mat-icon>
+  </button>
+  <button mat-raised-button color="navigator" (click) = "nextTextIndex()" [disabled]="(currentTextIndex === textsLength -1)">
+      <mat-icon>block</mat-icon>
+  </button>
+  <button mat-raised-button color="navigator" (click) = "previousTextIndex()" [disabled]="currentTextIndex === 0">
+      <mat-icon>keyboard_return</mat-icon>
+  </button>
+</footer>

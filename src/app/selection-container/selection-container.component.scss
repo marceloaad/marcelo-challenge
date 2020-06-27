@@ -1,0 +1,26 @@
+.selection-container{
+    position: relative;
+    background-color: #eceb87;
+    margin: 0.4em;
+    padding: 0 0.4em;
+    font-weight: bolder;
+    .mat-icon{
+        display: none;
+        position: absolute;
+        font-size: 12px;
+        top: -7px;
+        left: -7px;
+        cursor: pointer;
+    }
+    &:hover {
+        .mat-icon{
+            display: block;
+        }
+    }
+    .selection-entity{
+        font-family: sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        color: #8634d3;
+    }
+}
