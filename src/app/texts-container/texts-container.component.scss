@@ -1,7 +1,7 @@
 $selection-color: #eceb87;
 .texts-container{
     position: relative;
-    display: inline-flex;
+    display: block;
     padding: 1em 0.6em;
     height: 7em;
     &::-moz-selection {

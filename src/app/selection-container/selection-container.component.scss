@@ -3,9 +3,9 @@ $entity-color: #8634d3;
 .selection-container{
     position: relative;
     background-color: $selection-color;
-    margin: 0.4em;
     padding: 0 0.4em;
     font-weight: bolder;
+    display: inline-block;
     .mat-icon{
         display: none;
         position: absolute;
@@ -24,5 +24,6 @@ $entity-color: #8634d3;
         font-size: 10px;
         font-weight: bold;
         color: $entity-color;
+        padding-left: 4px;
     }
 }
