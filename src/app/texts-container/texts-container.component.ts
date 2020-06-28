@@ -88,7 +88,8 @@ export class TextsContainerComponent implements OnInit, OnChanges {
       this.selectedText = {
         docId: this.currentText.doc_id,
         entity: this.currentEntity,
-        range: range
+        startOffset: range.startOffset,
+        endOffset: range.endOffset
       };
       this.emitTextSelection();
 

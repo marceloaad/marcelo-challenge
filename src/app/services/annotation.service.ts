@@ -15,15 +15,15 @@ export class AnnotationService {
 
   /**
    * Builds an Annotation (Annotation Interface)
-   * @param selection - object {entity: string, range: range}
+   * @param selection - object {entity: string, startOffset: number, endOffset: number}
    * @returns Annotation
    */
   buildAnnotation(selection: any): Annotation {
     const annotationFormated: Annotation = {
       type: selection.entity,
       offset: {
-        start_char: selection.range.startOffset,
-        end_char: selection.range.endOffset
+        start_char: selection.startOffset,
+        end_char: selection.endOffset
       }
     };
     return annotationFormated;
@@ -63,10 +63,9 @@ export class AnnotationService {
     } else {
       document = this.buildDocument(textSelection['docId']);
       this.annotationsData.push(document);
+
     }
-    if (!document.annotations.some(annotationPlaced => annotationPlaced.annotations === annotation)) {
-      document.annotations.push(annotation);
-    }
+    document.annotations.push(annotation);
     console.log('Annotation Data', this.annotationsData);
   }
 }

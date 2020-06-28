@@ -19,7 +19,7 @@ describe('AnnotationService', () => {
   });
 
   it('Annotations Array should not be empty after postAnnotation()', () => {
-    const selection: object = {docId: 0, entity: 'PERSON', range: {startOffset: 0, endOffset: 10}};
+    const selection: object = {docId: 0, entity: 'PERSON', startOffset: 0, endOffset: 10};
     service.postAnnotation(selection);
     const annotations = service.getAnnotations();
     expect(annotations.length).toEqual(1);
