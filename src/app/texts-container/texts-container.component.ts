@@ -88,13 +88,8 @@ export class TextsContainerComponent implements OnInit {
       );
       this.selectedText = { 
         'docId': this.currentText.doc_id, 
-        'annotations': [{ 
-          'type': this.currentEntity,
-          'offset': {
-            'start_char': range.startOffset,
-            'end_char': range.endOffset
-          }
-        }]
+        'entity': this.currentEntity,
+        'range': range
       };
       this.emitTextSelection();
 

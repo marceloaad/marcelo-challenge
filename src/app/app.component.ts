@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   postAnnotation() {
     if (this.textSelection !== null) {
       this.postingAnnotation = true;
-      this._annotationService.postAnnotation(JSON.parse(JSON.stringify(this.textSelection)));
+      this._annotationService.postAnnotation(this.textSelection);
       this.textSelection = null;
       setTimeout(() => this.postingAnnotation = false,500);
     }
