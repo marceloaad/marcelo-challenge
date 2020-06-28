@@ -1,16 +1,16 @@
 # Marcelo-Challengue
 
-## Install project
+## Install project dependencies
 
-    npm i
+    npm i || npm install
 
 ## Build project
 
-    ng build
+    ng build || npm run build
 
 ## Usage
-
-    ng serve
+    Run application:
+        ng serve || npm start
     In a browser open http://localhost:4200/
 
 ## Built With:
