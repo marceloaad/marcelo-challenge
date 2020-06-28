@@ -1,24 +1,25 @@
 import { Component,
   OnInit,
+  OnChanges,
   Input,
   Output,
   EventEmitter,
   Renderer2,
   Injector,
   ComponentFactoryResolver,
-  ApplicationRef 
+  ApplicationRef
 } from '@angular/core';
 import { TextService } from '../services/text.service';
-import { EmitEntityService } from '../services/emit-entity.service'
-import { DeselectService } from '../services/deselect.service'
-import { SelectionContainerComponent } from "../selection-container/selection-container.component";
+import { EmitEntityService } from '../services/emit-entity.service';
+import { DeselectService } from '../services/deselect.service';
+import { SelectionContainerComponent } from '../selection-container/selection-container.component';
 
 @Component({
   selector: 'app-texts-container',
   templateUrl: './texts-container.component.html',
   styleUrls: ['./texts-container.component.scss']
 })
-export class TextsContainerComponent implements OnInit {
+export class TextsContainerComponent implements OnInit, OnChanges {
 
   constructor(
     private _textService: TextService,
@@ -32,15 +33,13 @@ export class TextsContainerComponent implements OnInit {
 
   public selectedText = {};
   public texts = [];
-  public currentText = {'text': "", 'source': '', 'doc_id': null};
-  public currentEntity: String = "PERSON";
+  public currentText = {text: '', source: '', doc_id: null};
+  public currentEntity: string = 'PERSON';
   public changes: { range: Range; content: Node }[] = [];
   public activeSelection: boolean = false;
   public textContainer: Element;
-  
   @Output()
   public sendSelectedText: EventEmitter<object> = new EventEmitter<object>();
-
   @Input()
   public textIndex: number;
 
@@ -86,14 +85,14 @@ export class TextsContainerComponent implements OnInit {
         caretPosition.commonAncestorContainer,
         caretPosition.endOffset
       );
-      this.selectedText = { 
-        'docId': this.currentText.doc_id, 
-        'entity': this.currentEntity,
-        'range': range
+      this.selectedText = {
+        docId: this.currentText.doc_id,
+        entity: this.currentEntity,
+        range: range
       };
       this.emitTextSelection();
 
-      const wrap = this.renderer.createElement("wrapper-container");
+      const wrap = this.renderer.createElement('wrapper-container');
       const factory = this.cfr.resolveComponentFactory<SelectionContainerComponent>(
         SelectionContainerComponent
       );

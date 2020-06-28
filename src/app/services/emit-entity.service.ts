@@ -6,12 +6,12 @@ import { Subject } from 'rxjs';
 })
 export class EmitEntityService {
 
-  private _entitySource = new Subject<String>();
+  private _entitySource = new Subject<string>();
   entity$ = this._entitySource.asObservable();
 
   constructor() { }
 
-   /**
+  /**
    * Emits the Entity observed
    */
   emitEntity(entity: string) {

@@ -6,10 +6,10 @@ export class AppPage {
   }
 
   getEntityButton(entity: string) {
-    return element(by.css(`[ng-reflect-value="${entity}"]`));
+    return element(by.css(`[ng-reflect-value='${entity}']`));
   }
 
   getFooterButton(name: string) {
-    return element(by.css(`[name="${name}"]`));
+    return element(by.css(`[name='${name}']`));
   }
 }

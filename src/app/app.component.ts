@@ -31,14 +31,14 @@ export class AppComponent implements OnInit {
       this.postingAnnotation = true;
       this._annotationService.postAnnotation(this.textSelection);
       this.textSelection = null;
-      setTimeout(() => this.postingAnnotation = false,500);
+      setTimeout(() => this.postingAnnotation = false, 500);
     }
   }
   /**
    * Moves forward to the next text included in the array of the Text Service.
    */
   nextTextIndex() {
-    if (this.currentTextIndex < this.textsLength -1) {
+    if (this.currentTextIndex < this.textsLength - 1) {
       this.currentTextIndex += 1;
     }
   }
