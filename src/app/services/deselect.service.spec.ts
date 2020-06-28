@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { DeselectService } from './deselect.service';
 
 describe('DeselectService', () => {
@@ -22,9 +21,7 @@ describe('DeselectService', () => {
     inject([DeselectService], (deselectService) => {
       deselectService.action$.subscribe((action) => {
         expect(action).toBe(true);
-      })
+      });
       deselectService.emitAction(true);
   }));
-  
 });
-

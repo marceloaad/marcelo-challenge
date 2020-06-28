@@ -7,9 +7,9 @@ import { TextsContainerComponent } from './texts-container/texts-container.compo
 import { EntityService } from './services/entity.service';
 import { TextService } from './services/text.service';
 import { AnnotationService } from './services/annotation.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
-import { SelectionContainerComponent } from './selection-container/selection-container.component'
+import { SelectionContainerComponent } from './selection-container/selection-container.component';
 
 @NgModule({
   declarations: [

@@ -1,10 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-
 import { EntityService } from './entity.service';
 
 describe('EntityService', () => {
   let service: EntityService;
-  
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
@@ -27,7 +25,7 @@ describe('EntityService', () => {
 
   it('should contains the entity PERSON', () => {
     const entities = service.getEntities();
-    const sampleEntity: string = "PERSON";
+    const sampleEntity: string = 'PERSON';
     expect(entities).toContain(sampleEntity);
   });
 });

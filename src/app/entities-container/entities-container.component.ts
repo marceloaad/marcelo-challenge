@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EntityService } from '../services/entity.service';
-import { EmitEntityService } from '../services/emit-entity.service'
+import { EmitEntityService } from '../services/emit-entity.service';
 
 @Component({
   selector: 'app-entities-container',
@@ -9,7 +9,10 @@ import { EmitEntityService } from '../services/emit-entity.service'
 })
 export class EntitiesContainerComponent implements OnInit {
 
-  constructor(private _entityService: EntityService, private _emitEntity: EmitEntityService) { }
+  constructor(
+    private _entityService: EntityService,
+    private _emitEntity: EmitEntityService
+  ) { }
 
   public entities = [];
 

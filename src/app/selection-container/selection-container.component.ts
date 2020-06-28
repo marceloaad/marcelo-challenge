@@ -8,12 +8,14 @@ import { DeselectService } from '../services/deselect.service';
 })
 export class SelectionContainerComponent{
 
-  constructor(private _deselect: DeselectService) { }
+  constructor(
+    private _deselect: DeselectService
+  ) { }
 
   public innerText: string;
-  public entity: String;
+  public entity: string;
 
-  @Output() 
+  @Output()
   public removeSelection = new EventEmitter<boolean>();
 
   /**

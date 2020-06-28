@@ -10,7 +10,7 @@ export class DeselectService {
   action$ = this._actionSource.asObservable();
 
   constructor() { }
-   /**
+  /**
    * Emits the action observed
    */
   emitAction(action: boolean) {

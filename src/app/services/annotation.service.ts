@@ -12,20 +12,20 @@ export class AnnotationService {
   constructor() {
     this.annotationsData = new Array<object>();
   }
- 
+
   /**
    * Builds an Annotation (Annotation Interface)
    * @param selection - object {entity: string, range: range}
    * @returns Annotation
    */
   buildAnnotation(selection: any): Annotation {
-    let annotationFormated: Annotation = {
-      'type': selection.entity,
-      'offset': {
-        'start_char': selection.range.startOffset,
-        'end_char': selection.range.endOffset
+    const annotationFormated: Annotation = {
+      type: selection.entity,
+      offset: {
+        start_char: selection.range.startOffset,
+        end_char: selection.range.endOffset
       }
-    }
+    };
     return annotationFormated;
   }
 
@@ -35,10 +35,10 @@ export class AnnotationService {
    * @returns Document
    */
   buildDocument(docId: number): Document{
-    let document: Document = {
-      'doc_id' : docId,
-      'annotations' : []
-    }
+    const document: Document = {
+      doc_id : docId,
+      annotations : []
+    };
     return document;
   }
 
@@ -57,13 +57,16 @@ export class AnnotationService {
    */
   postAnnotation(textSelection: object): void {
     let document: any;
+    const annotation: Annotation = this.buildAnnotation(textSelection);
     if (this.annotationsData.some(doc => doc['doc_id'] === textSelection['docId'])) {
       document = this.annotationsData.find( doc => doc['doc_id'] === textSelection['docId']);
     } else {
       document = this.buildDocument(textSelection['docId']);
-      this.annotationsData.push(document)
+      this.annotationsData.push(document);
     }
-    document.annotations.push(this.buildAnnotation(textSelection));
-    console.log("Annotation Data",this.annotationsData);
+    if (!document.annotations.some(annotationPlaced => annotationPlaced.annotations === annotation)) {
+      document.annotations.push(annotation);
+    }
+    console.log('Annotation Data', this.annotationsData);
   }
 }
