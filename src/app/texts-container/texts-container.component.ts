@@ -67,7 +67,7 @@ export class TextsContainerComponent implements OnInit, OnChanges {
   ngOnChanges(changes) {
     this.deselect();
     this.currentText = this.texts[this.textIndex];
-    this.textContainer.textContent = this.texts[this.textIndex].text;
+    this.currentText ? this.textContainer.textContent = this.currentText.text : null;
   }
   /**
    * Gets the selection of the text container
@@ -88,7 +88,8 @@ export class TextsContainerComponent implements OnInit, OnChanges {
       this.selectedText = {
         docId: this.currentText.doc_id,
         entity: this.currentEntity,
-        range: range
+        startOffset: range.startOffset,
+        endOffset: range.endOffset
       };
       this.emitTextSelection();
 
@@ -121,7 +122,7 @@ export class TextsContainerComponent implements OnInit, OnChanges {
       range.insertNode(action.content);
       this.activeSelection = false;
       this.selectedText = {};
-      this.textContainer.textContent = this.currentText.text;
+      this.currentText ? this.textContainer.textContent = this.currentText.text : null;
     }
   }
   /**
