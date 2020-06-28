@@ -1,8 +1,15 @@
+$selection-color: #eceb87;
 .texts-container{
     position: relative;
     display: inline-flex;
     padding: 1em 0.6em;
     height: 7em;
+    &::-moz-selection {
+         background: $selection-color; 
+        }
+    &::selection {
+         background: $selection-color; 
+        }
 }
 .source-container{
     font-size: 10px;

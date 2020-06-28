@@ -1,16 +1,18 @@
+$primary-color: #4f23b6;
+$secondary-color: #ffffff;
 ::ng-deep.mat-button-toggle-group{
-    background-color: #4f23b6;
+    background-color: $primary-color;
     border-radius: 0!important;
     padding: 1em;
     flex-wrap: wrap;
     .mat-button-toggle {
-        background-color: #4f23b6;
+        background-color: $primary-color;
         margin: 0.4em;
-        border: 2px solid #ffffff!important;
+        border: 2px solid $secondary-color!important;
         border-radius: 2px;
         .mat-button-toggle-button {
             .mat-button-toggle-label-content {
-                color: #ffffff;
+                color: $secondary-color;
                 line-height: 1.5;
                 padding: 0.2em 0.4em;
                 span {
@@ -21,10 +23,10 @@
         }
     }
     .mat-button-toggle-checked {
-        background-color: #ffffff;
+        background-color: $secondary-color;
         .mat-button-toggle-button {
             .mat-button-toggle-label-content {
-                color: #4f23b6;
+                color: $primary-color;
                 font-weight: bold;
             }
         }

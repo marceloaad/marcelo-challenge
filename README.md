@@ -3,6 +3,7 @@
 ## Install project
 
     npm i
+
 ## Build project
 
     ng build
@@ -16,6 +17,14 @@
 
     Angular CLI version 9.1.9.
     Angular Material version 9.2.4.
+
+## Testing
+
+    # Services Unit Tests
+        ng test
+
+    # End to End Tests
+        ng e2e
 
 ## Author
 

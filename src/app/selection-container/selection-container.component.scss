@@ -1,6 +1,8 @@
+$selection-color: #eceb87;
+$entity-color: #8634d3;
 .selection-container{
     position: relative;
-    background-color: #eceb87;
+    background-color: $selection-color;
     margin: 0.4em;
     padding: 0 0.4em;
     font-weight: bolder;
@@ -21,6 +23,6 @@
         font-family: sans-serif;
         font-size: 10px;
         font-weight: bold;
-        color: #8634d3;
+        color: $entity-color;
     }
 }
