@@ -122,7 +122,7 @@ export class TextsContainerComponent implements OnInit, OnChanges {
       range.insertNode(action.content);
       this.activeSelection = false;
       this.selectedText = {};
-      this.currentText ? this.textContainer.textContent = this.currentText.text : null;
+      this.textContainer.textContent = this.currentText.text || null;
     }
   }
   /**
