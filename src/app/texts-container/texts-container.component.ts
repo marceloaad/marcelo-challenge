@@ -118,7 +118,6 @@ export class TextsContainerComponent implements OnInit, OnChanges {
     if (this.activeSelection) {
       const action = this.changes.pop();
       const range = action.range;
-      const node = range.extractContents();
       range.insertNode(action.content);
       this.activeSelection = false;
       this.selectedText = {};
